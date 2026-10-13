@@ -5,3 +5,4 @@ Avendo già dato alcuni esami che trattano alcune aree tematiche, rendendo quind
 
 Le lezioni sono numerate, ma si propone comunque un indice di seguito:
 - [L1](./knowledge_base/01.md)
+- [L2](./knowledge_base/02.md)
