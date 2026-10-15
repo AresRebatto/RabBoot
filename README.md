@@ -6,3 +6,5 @@ Avendo già dato alcuni esami che trattano alcune aree tematiche, rendendo quind
 Le lezioni sono numerate, ma si propone comunque un indice di seguito:
 - [L1](./knowledge_base/01.md)
 - [L2](./knowledge_base/02.md)
+Di queste due prime parti, il codice assembly è accessibile, che non è includo nel bootloader finale, si trova nella cartella `L1.2`. A partire da L3, si inizierà a scrivere a tutti gli effetti il bootloader.
+- [L3](./knowledge_base/03.md)
