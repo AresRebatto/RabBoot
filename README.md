@@ -34,16 +34,17 @@ L'obiettivo non è trattare il processo di avvio come una scatola nera, ma compr
 
 ### 📚 Teoria e sperimentazione
 
-| Lezione | Argomento | Descrizione |
-|:--:|---|---|
-| [L1](knowledge_base/01.md) | Primo boot sector | Scrittura e assemblaggio di un boot sector minimale capace di stampare un messaggio. |
-| [L2](knowledge_base/02.md) | Inizializzazione e debugging | Preparazione dello stato iniziale della CPU e analisi dell'esecuzione con GDB. |
+| Lezione                    | Argomento                    | Descrizione                                                                          |
+|:--------------------------:| ---------------------------- | ------------------------------------------------------------------------------------ |
+| [L1](knowledge_base/01.md) | Primo boot sector            | Scrittura e assemblaggio di un boot sector minimale capace di stampare un messaggio. |
+| [L2](knowledge_base/02.md) | Inizializzazione e debugging | Preparazione dello stato iniziale della CPU e analisi dell'esecuzione con GDB.       |
 
 ### ⚙️ Sviluppo del bootloader
 
-| Lezione | Argomento | Descrizione |
-|:--:|---|---|
+| Lezione                    | Argomento                      | Descrizione                                                                                                                                 |
+|:--------------------------:| ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------- |
 | [L3](knowledge_base/03.md) | Implementazione del bootloader | Prosecuzione dello sviluppo, con codice sorgente e spiegazioni dei meccanismi implementati. In questa lezione si affronta solo lo stadio 1. |
+| [L4](knowledge_base/04.md) | Testing del primo stadio       | Lezione breve relativa all'implementazione di un brevissimo stadio 2 per verificarne il caricamento.                                        |
 
 > Le prime lezioni introducono concetti ed esperimenti isolati. A partire da L3, l'attenzione si sposta sulla realizzazione del bootloader vero e proprio.
 
