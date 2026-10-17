@@ -1,10 +1,77 @@
 # RabBoot
-Ciao. Sono uno studente di cybersecurity all'Unimi e, studiando Sistemi Operativi, ho deciso che sarebbe stato interessante scrivere un bootloader e documentare tutto il mio percorso con le nozioni che ho imparato in `knowledge_base`, con delle lezioni numerate.
 
-Avendo già dato alcuni esami che trattano alcune aree tematiche, rendendo quindi di scarsa rilevanza la riscrittura di concetti già visti, ci saranno concetti che saranno dati relativamente per scontato. In particolare si prende le basi dell'assembly MIPS e un pochino di x86 per fatte e così anche il funzionamento generale dell'avvio di un computer (Nel nostro caso, ci interessano sostanzialmente solo bootloader e MBR sostanzialmente).
+<p align="center">
+  <strong>Un bootloader x86 didattico, sviluppato da zero.</strong>
+  <br />
+</p>
 
-Le lezioni sono numerate, ma si propone comunque un indice di seguito:
-- [L1](./knowledge_base/01.md)
-- [L2](./knowledge_base/02.md)
-Di queste due prime parti, il codice assembly è accessibile, che non è includo nel bootloader finale, si trova nella cartella `L1.2`. A partire da L3, si inizierà a scrivere a tutti gli effetti il bootloader.
-- [L3](./knowledge_base/03.md)
+<p align="center">
+  <img src="https://img.shields.io/badge/Architettura-x86-informational?style=flat-square" alt="Architettura x86" />
+  <img src="https://img.shields.io/badge/Assembly-NASM-blue?style=flat-square" alt="Assembly NASM" />
+  <img src="https://img.shields.io/badge/Firmware-BIOS-lightgrey?style=flat-square" alt="Firmware BIOS" />
+  <img src="https://img.shields.io/badge/Emulatore-QEMU-orange?style=flat-square" alt="Emulatore QEMU" />
+</p>
+
+---
+
+## Introduzione
+
+**RabBoot** è un progetto didattico dedicato allo studio del processo di avvio di un computer, dal passaggio di controllo da parte del BIOS all'esecuzione del codice del nostro bootloader.
+
+Il progetto combina lo sviluppo pratico in Assembly x86 con una raccolta di appunti tecnici che documentano i concetti affrontati durante il percorso.
+
+L'obiettivo non è trattare il processo di avvio come una scatola nera, ma comprenderne i meccanismi, capire perché funzionano in un determinato modo e verificarli sperimentalmente.
+
+### Obiettivi didattici
+
+- **Assembly x86** — registri, istruzioni, indirizzamento e real mode.
+- **Processo di avvio** — BIOS, boot sector, organizzazione della memoria e MBR.
+- **I/O a basso livello** — interrupt BIOS e operazioni fondamentali di input/output.
+- **Debugging** — analisi dell'esecuzione e dello stato della CPU con GDB e QEMU.
+- **Sviluppo del bootloader** — realizzazione progressiva del codice necessario a caricare ed eseguire gli stadi successivi.
+
+## Indice
+
+### 📚 Teoria e sperimentazione
+
+| Lezione | Argomento | Descrizione |
+|:--:|---|---|
+| [L1](knowledge_base/01.md) | Primo boot sector | Scrittura e assemblaggio di un boot sector minimale capace di stampare un messaggio. |
+| [L2](knowledge_base/02.md) | Inizializzazione e debugging | Preparazione dello stato iniziale della CPU e analisi dell'esecuzione con GDB. |
+
+### ⚙️ Sviluppo del bootloader
+
+| Lezione | Argomento | Descrizione |
+|:--:|---|---|
+| [L3](knowledge_base/03.md) | Implementazione del bootloader | Prosecuzione dello sviluppo, con codice sorgente e spiegazioni dei meccanismi implementati. In questa lezione si affronta solo lo stadio 1. |
+
+> Le prime lezioni introducono concetti ed esperimenti isolati. A partire da L3, l'attenzione si sposta sulla realizzazione del bootloader vero e proprio.
+
+## Struttura del progetto
+
+```text
+RabBoot/
+├── knowledge_base/    # Lezioni e appunti tecnici
+├── L1.2/              # Primi esperimenti in Assembly
+├── bootloader_st1.asm # Primo stadio del bootloader
+├── bootloader_st2.asm # Secondo stadio del bootloader
+└── README.md
+```
+
+## Requisiti
+
+Per sperimentare con il codice sono necessari:
+
+- **NASM** — per assemblare il codice sorgente.
+- **QEMU** — per emulare la macchina e verificare il funzionamento del bootloader.
+- **GDB** — per analizzare l'esecuzione e ispezionare lo stato della CPU.
+
+È utile avere una conoscenza di base dell'Assembly e dell'architettura x86, ma i concetti necessari vengono introdotti progressivamente nelle singole lezioni.
+
+Per i comandi di compilazione, esecuzione e debugging, consulta le lezioni corrispondenti.
+
+## Stato del progetto
+
+RabBoot è un progetto in evoluzione: il codice e la documentazione vengono sviluppati parallelamente, man mano che vengono approfonditi nuovi aspetti del processo di avvio.
+
+La finalità principale è didattica: comprendere i meccanismi alla base dell'avvio di un sistema attraverso la loro implementazione pratica e la documentazione delle scelte effettuate.

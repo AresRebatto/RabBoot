@@ -33,7 +33,7 @@ main:
     test cx, 1
     jz error
 
-    ; Carica un settore: LBA 1 -> fisico 0x7E00
+    ; Carica un settore: LBA 1 al fisico 0x7E00
     mov si, dap
     mov dl, [boot_drive]
     mov ah, 0x42
@@ -80,6 +80,6 @@ dap:
 error_msg:
     db "Stage 1: disk error", 0
 
-; Il boot sector deve essere esattamente 512 byte
+
 times 510 - ($ - $$) db 0
 dw 0xAA55
