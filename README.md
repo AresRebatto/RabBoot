@@ -41,10 +41,11 @@ L'obiettivo non è trattare il processo di avvio come una scatola nera, ma compr
 
 ### ⚙️ Sviluppo del bootloader
 
-| Lezione                    | Argomento                      | Descrizione                                                                                                                                 |
-|:--------------------------:| ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------- |
-| [L3](knowledge_base/03.md) | Implementazione del bootloader | Prosecuzione dello sviluppo, con codice sorgente e spiegazioni dei meccanismi implementati. In questa lezione si affronta solo lo stadio 1. |
-| [L4](knowledge_base/04.md) | Testing del primo stadio       | Lezione breve relativa all'implementazione di un brevissimo stadio 2 per verificarne il caricamento.                                        |
+| Lezione                    | Argomento                                           | Descrizione                                                                                                                                   |
+|:--------------------------:| --------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
+| [L3](knowledge_base/03.md) | Implementazione del bootloader                      | Prosecuzione dello sviluppo, con codice sorgente e spiegazioni dei meccanismi implementati. In questa lezione si affronta solo lo stadio 1.   |
+| [L4](knowledge_base/04.md) | Testing del primo stadio                            | Lezione breve relativa all'implementazione di un brevissimo stadio 2 per verificarne il caricamento.                                          |
+| [L5](knowledge_base/05.md) | Prima parte dell'implementazione del secondo stadio | Inizio del secondo stadio con la definizione delle prime procedure ed uso di fali sorgente differenti per rendere il bootloader più modulare. |
 
 > Le prime lezioni introducono concetti ed esperimenti isolati. A partire da L3, l'attenzione si sposta sulla realizzazione del bootloader vero e proprio.
 
@@ -56,6 +57,7 @@ RabBoot/
 ├── L1.2/              # Primi esperimenti in Assembly
 ├── bootloader_st1.asm # Primo stadio del bootloader
 ├── bootloader_st2.asm # Secondo stadio del bootloader
+├── modules/           # Moduli usati nel secondo stadio
 └── README.md
 ```
 
