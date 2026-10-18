@@ -19,6 +19,8 @@ print:
 		pop ax
 		ret
 
+; In al il valore da stampare
+; In cx va 1 per il newline
 print_hex_digit:
 
 	push ax
@@ -39,6 +41,21 @@ print_hex_digit:
 	    mov bx, 0x0007
 	    int 0x10
 
-		pop bx
-		pop ax
-	    ret
+		cmp cl, 0x1
+		jne .end
+
+		; per  andare a capo
+		mov ah, 0x0E
+  		mov bx, 0x0007
+		mov al, 0xD
+		int 0x10
+
+		mov ah, 0x0E
+  		mov bx, 0x0007
+		mov al, 0xA
+		int 0x10
+		
+	 	.end:
+			pop bx
+			pop ax
+		    ret

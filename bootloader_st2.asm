@@ -10,14 +10,15 @@ jmp start
 
 start:
 	cli
-	
+
     xor ax, ax
     mov ds, ax
     mov es, ax
     mov ss, ax
 
     sti
-    
+
+
     mov si, load_message
     call print
 
