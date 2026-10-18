@@ -18,7 +18,8 @@ start:
 
     sti
 
-
+    mov [boot_drive], dl
+    
     mov si, load_message
     call print
 
@@ -34,3 +35,6 @@ halt:
 
 load_message:
     db "Stage 2 loaded!", 13, 10, 0
+
+boot_drive:
+	db 0

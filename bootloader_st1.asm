@@ -40,6 +40,7 @@ main:
     int 0x13
     jc error
 
+    mov dl, [boot_drive]
     ; Trasferisce il controllo allo Stage 2
     jmp 0x0000:0x7E00
 
