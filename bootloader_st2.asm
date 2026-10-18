@@ -1,26 +1,35 @@
-
 bits 16
 org 0x7E00
 
+jmp start
+
+%include "modules/console.asm"
+%include "modules/disk.asm"
+%include "modules/memory.asm"
+%include "modules/protected_mode.asm"
+
 start:
+	cli
+	
     xor ax, ax
     mov ds, ax
-    mov si, message
+    mov es, ax
+    mov ss, ax
 
-.print:
-    lodsb
-    test al, al
-    jz .halt
+    sti
+    
+    mov si, load_message
+    call print
 
-    mov ah, 0x0E
-    mov bx, 0x0007
-    int 0x10
-    jmp .print
 
-.halt:
+
+    call halt
+
+halt:
     cli
-    hlt
-    jmp .halt
+    .loop:
+    	hlt
+     	jmp .loop
 
-message:
-    db "Stage 2 loaded!", 0
+load_message:
+    db "Stage 2 loaded!", 13, 10, 0

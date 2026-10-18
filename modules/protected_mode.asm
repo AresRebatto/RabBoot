@@ -1,0 +1,1 @@
+; questo ci servirà per A20 e GDT
