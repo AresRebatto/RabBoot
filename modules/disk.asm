@@ -10,7 +10,7 @@ disk_read_sector:
     push si
     push dx
 
-    ; Check EDD support
+    ; Verifica delle estensioni
     mov ah, 0x41
     mov bx, 0x55AA
     int 0x13
@@ -22,15 +22,21 @@ disk_read_sector:
     test cx, 1
     jz .edd_error
 
-    ; Restore inputs before reading
+    ; Ripristina gli input dopo la lettura
     pop dx
     pop si
 
-    ; Preserve inputs across disk read
+    
     push si
     push dx
 
-    ; Read sectors using DAP
+    ; Legge i settori usando il DAP
+    ; DAP format:
+    ; Dimensione del pacchetto. (db)
+    ; Riservato. (db)
+    ; Numero di settori da leggere. (dw)
+    ; Indirizzo del buffer di destinazione. (dw)
+    ; Indirizzo LBA del primo settore da leggere. (dq) 
     mov ah, 0x42
     int 0x13
 

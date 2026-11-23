@@ -23,6 +23,15 @@ start:
     mov si, load_message
     call print
 
+    mov cx, 0xA
+    mov al, 0x1
+    mov si, mem_to_set
+    call mem_set
+    
+    mov si, mem_to_set
+    call print
+
+
 
 
     call halt
@@ -38,3 +47,7 @@ load_message:
 
 boot_drive:
 	db 0
+
+mem_to_set:
+    times 10 db 0x0
+    db 13, 10, 0
